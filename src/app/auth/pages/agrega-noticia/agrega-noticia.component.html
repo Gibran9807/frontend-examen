@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Añadir Noticia</title>
+</head>
+<body>
+  <div class="container">
+    <h2>Añade una Noticia</h2>
+    <form [formGroup]="myFormNoticia">
+      <div class="form-group">
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" name="titulo" placeholder="Ingrese el título" formControlName="titulo">
+      </div>
+      <div class="form-group">
+        <label for="contenido">Contenido:</label>
+        <textarea id="contenido" name="contenido" rows="8" placeholder="Ingrese el contenido" formControlName="contenido"></textarea>
+      </div>
+      <button type="submit" (click)="addNoticia()">Enviar</button>
+    </form>
+  </div>
+</body>
+</html>

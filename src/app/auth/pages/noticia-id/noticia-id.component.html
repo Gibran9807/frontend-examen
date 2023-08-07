@@ -1,0 +1,92 @@
+
+  <div class="ag-format-container">
+    <div class="ag-courses_box">
+      <div class="ag-courses_item">
+        <a class="ag-courses-item_link">
+          <div class="ag-courses-item_title">
+            {{titulo}}
+          </div>
+          <div>
+            <p>
+              {{contenido}}
+            </p>
+          </div>
+          <div class="ag-courses-item_date-box">
+            Fecha:
+            <span class="ag-courses-item_date">
+              {{fecha}}
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <form action="" [formGroup]="myFormComent">
+    <div class="custom-container">
+      <textarea class="custom-textarea" placeholder="Escribe tu comentario" formControlName="comentario"></textarea>
+      <button class="custom-button" (click)="addComentario()">Añadir Comentario</button>
+    </div>
+  </form>
+<div *ngFor="let comentario of comentarios" style="width: 75%; margin-left: 25%;">
+  <div class="ag-format-container">
+    <div class="ag-courses_box">
+      <div class="ag-courses_item">
+        <a class="ag-courses-item_link">
+          <div class="ag-courses-item_title">
+            Comentario: {{comentario.idpersonal ? comentario.idpersonal : 'Anonimo'}}
+          </div>
+          <div class="ag-courses-item_bg"></div>
+          <div>
+            <p>
+              {{comentario.comentario}}
+            </p>
+          </div>
+          <div class="ag-courses-item_date-box">
+            Fecha:
+            <span class="ag-courses-item_date">
+              {{comentario.fecha_hora}}
+            </span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+    <form action="" [formGroup]="myFormRes">
+      <div class="custom-container-resp" >
+        <textarea class="custom-textarea" placeholder="Escribe tu respuesta" formControlName="respuesta" ></textarea>
+        <button class="custom-button" (click)="addRespuesta(comentario.idcomentario)">Añadir Respuesta</button>
+      </div>
+    </form>
+    <div *ngFor="let respuesta of comentario.respuestas" style="width: 25%; margin-left: 8.25%;" [hidden]="respuesta.idcomentario !== comentario.idcomentario">
+      <div class="ag-format-container">
+        <div class="ag-courses_box">
+          <div class="ag-courses_item">
+            <a class="ag-courses-item_link">
+              <div class="ag-courses-item_title">
+                Respuesta: {{respuesta.idpersonal_respuesta ? respuesta.idpersonal_respuesta : 'Anonimo'}}
+              </div>
+              <div class="ag-courses-item_br"></div>
+              <div>
+                <p>
+                  {{respuesta.contenido_respuesta}}
+                </p>
+              </div>
+              <div class="ag-courses-item_date-box">
+                Fecha:
+                <span class="ag-courses-item_date">
+                  {{respuesta.fecha_hora_respuesta}}
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,72 @@
+<div class="container">
+	<div class="screen">
+		<div class="screen__content">
+			<form
+        class="login"
+        (ngSubmit)="register()"
+        [formGroup]="myFormRegister"
+        >
+        <h3>Log Up</h3>
+				<div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input
+            type="text"
+            class="login__input"
+            placeholder="Apellido Paterno"
+            formControlName="apepaterno">
+				</div>
+        <div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input
+            type="text"
+            class="login__input"
+            placeholder="Apellido Materno"
+            formControlName="apematerno">
+				</div>
+        <div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input
+            type="text"
+            class="login__input"
+            placeholder="Nombre"
+            formControlName="nombre">
+				</div>
+        <div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input
+            type="text"
+            class="login__input"
+            placeholder="Direccion"
+            formControlName="direccion">
+				</div>
+        <div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input
+            type="text"
+            class="login__input"
+            placeholder="User"
+            formControlName="nombre_usuario">
+				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-lock"></i>
+					<input type="password" class="login__input" placeholder="Password" formControlName="contrasena" >
+				</div>
+				<button class="button login__submit" [disabled]="myFormRegister.invalid">
+					<span class="button__text">Sign Up Now</span>
+					<i class="button__icon fas fa-chevron-right"></i>
+				</button>
+			</form>
+			<div class="social-login">
+				<div class="social-icons">
+					<a href="auth/login" class="social-login__icon fab fa-instagram">Log In</a>
+				</div>
+			</div>
+		</div>
+		<div class="screen__background">
+			<span class="screen__background__shape screen__background__shape4"></span>
+			<span class="screen__background__shape screen__background__shape3"></span>
+			<span class="screen__background__shape screen__background__shape2"></span>
+			<span class="screen__background__shape screen__background__shape1"></span>
+		</div>
+	</div>
+</div>
